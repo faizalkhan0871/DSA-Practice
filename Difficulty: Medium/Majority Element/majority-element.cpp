@@ -1,26 +1,30 @@
 class Solution {
-public:
+  public:
     int majorityElement(vector<int>& arr) {
-        
-        int candidate = 0, count = 0;
-
-        // Step 1: Find candidate
-        for(int num : arr) {
-            if(count == 0) {
-                candidate = num;
+        int n = arr.size();
+        int count = 0;
+        int el = 0;
+        for(int i =0 ; i <n ; i++ ){
+            if(count ==0){
+                el = arr[i];
+                count = 1;
             }
-
-            if(num == candidate) count++;
-            else count--;
+            else if (arr[i]==el){
+                count++;
+            }
+            else{
+                count--;
+            }
         }
-
-        // Step 2: Verify
-        count = 0;
-        for(int num : arr) {
-            if(num == candidate) count++;
+        int count1 = 0;
+        for(int i = 0 ; i < n ; i++ ){
+            if(arr[i]==el) count1++;
         }
-
-        if(count > arr.size()/2) return candidate;
+        if(count1>n/2){
+          return el;
+        }
+            
         return -1;
+        
     }
 };
