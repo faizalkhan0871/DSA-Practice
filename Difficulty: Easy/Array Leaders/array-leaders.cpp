@@ -1,20 +1,18 @@
 class Solution {
-public:
+  public:
     vector<int> leaders(vector<int>& arr) {
+        // code here
+        vector<int>ans;
         int n = arr.size();
-        vector<int> ans;
-
-        int maxRight = arr[n-1];
-        ans.push_back(maxRight);
-
-        for(int i = n-2; i >= 0; i--) {
-            if(arr[i] >= maxRight) {
+        int maxi = INT_MIN;
+        for(int i = n-1 ; i>=0; i--){
+            if(arr[i]>=maxi){
                 ans.push_back(arr[i]);
-                maxRight = arr[i];
+                maxi=arr[i];
             }
+       
         }
-
-        reverse(ans.begin(), ans.end());
+        reverse(ans.begin(),ans.end());
         return ans;
     }
 };
