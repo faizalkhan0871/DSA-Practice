@@ -21,8 +21,7 @@ public:
                 if (abs(sum - target) < abs(closestSum - target)) {
                     closestSum = sum;
                 }
-
-                // GFG tie case
+                // Tie case (GFG)
                 else if (abs(sum - target) == abs(closestSum - target)
                          && sum > closestSum) {
                     closestSum = sum;
@@ -35,7 +34,7 @@ public:
                     right--;
                 }
                 else {
-                    return sum;   // Exact target mil gaya
+                    return sum;
                 }
             }
         }
