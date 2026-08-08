@@ -7,7 +7,7 @@ class Solution {
         
         int low = 0;
         int high = n-1;
-        int mid = low+(high-low)/2;
+        
         while(low<=high){
             int mid = low+(high-low)/2;
             if(arr[mid]==k){
